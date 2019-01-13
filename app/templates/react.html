@@ -1,0 +1,23 @@
+{% load render_bundle from webpack_loader %}
+{% load json from json %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width"/>
+  <title>{{ title }}</title>
+</head>
+<body>
+<div id="react">
+  <i class="fa fa-lg fa-spinner fa-spin"></i><br><br>
+  <i class="pending">Loading page...</i><br><br>
+</div>
+
+<script>
+  window.initialState = {{initialState|json}};
+</script>
+
+{% render_bundle component %}
+</body>
+</html>
