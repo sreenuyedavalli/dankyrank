@@ -10,13 +10,22 @@ class NewGroup extends Component {
   constructor(props) {
     super(props);
     this.state = window.initialState;
-    this.state.groupName = '';
+    this.access_token = window.accessToken;
+    this.playlists = [];
     this.handleChange = this.handleChange.bind(this);
     this.createGroup = this.createGroup.bind(this);
+    this.getPlaylists = this.getPlaylists.bind(this);
+    this.getPlaylists()
   }
 
+
+  getPlaylists(){
+    console.log(this.access_token)
+  }
+
+
   handleChange(event){
-    this.setState({groupName: event.target.value});
+    //this.setState({groupName: event.target.value}); 
   }
   
   createGroup(){

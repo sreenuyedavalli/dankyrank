@@ -26,6 +26,7 @@ class NewGroupView(LoginRequiredMixin, TemplateView):
 
     def get_context_data(self, **kwargs):
         ctx = super(NewGroupView, self).get_context_data(**kwargs)
+        ctx['access_token'] = self.request.user.social_auth.first().access_token
         ctx['title'] = "Django React Multi-page App"
         ctx['component'] = 'NewGroup'
         ctx['initialState'] = {}

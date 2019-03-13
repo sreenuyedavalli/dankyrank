@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import '../bootstrap.css';
 
-class ViewGroups extends Component {
+class ViewGroup extends Component {
 
   constructor(props) {
     super(props);
@@ -18,11 +18,11 @@ class ViewGroups extends Component {
   }
 }
 
-export default ViewGroups;
+export default ViewGroup;
 
 let root = document.getElementById(('react'));
 if (root) {
-  ReactDOM.render(<ViewGroups/>, document.getElementById('react'));
+  ReactDOM.render(<ViewGroup/>, document.getElementById('react'));
 }
 
 

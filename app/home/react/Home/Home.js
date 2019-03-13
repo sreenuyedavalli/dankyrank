@@ -10,9 +10,8 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = window.initialState;
+
   }
-
-
 
   render() {
     return (
