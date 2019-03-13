@@ -26,6 +26,13 @@ WSGI_APPLICATION = 'wsgi.application'
 
 # APP AND MIDDLEWARE SETTINGS
 
+SOCIAL_AUTH_AUTHENTICATION_BACKENDS = (
+    'social_core.backends.spotify.SpotifyOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_POSTGRES_JSONFIELD = True
+
 DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,6 +45,7 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     'django_extensions',
     'webpack_loader',
+    'social_django',
 ]
 LOCAL_APPS = [
     'taskapp',
