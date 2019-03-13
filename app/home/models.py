@@ -22,7 +22,7 @@ class Playlist(models.Model):
         tracks = playlist['tracks']['items']
         self.songs.clear()
 
-        for track, idx in enumerate(tracks):
+        for idx, track in enumerate(tracks):
             artist_name = track['track']['artists'][0]['name']
             track_name = track['track']['name']
             track_id = track['track']['id']
