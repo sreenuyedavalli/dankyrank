@@ -4,9 +4,16 @@ import '../bootstrap.css';
 import TopNav from "./../TopNav";
 import {Container, Jumbotron} from "reactstrap";
 import Footer from "./../Footer";
+import Select from 'react-select';
+
+const options = [
+   
+  ];
 
 class NewGroup extends Component {
-
+    opt = {
+        selectedOption: null,
+    }
   constructor(props) {
     super(props);
     this.state = window.initialState;
@@ -14,18 +21,26 @@ class NewGroup extends Component {
     this.playlists = [];
     this.handleChange = this.handleChange.bind(this);
     this.createGroup = this.createGroup.bind(this);
+    this.selectedOption = {}
     this.getPlaylists = this.getPlaylists.bind(this);
     this.getPlaylists()
   }
 
 
   getPlaylists(){
-    console.log(this.access_token)
+    this.state.playlists.items.forEach(element => {
+        options.push({value : element.id, label : element.name})
+    });
   }
 
+  handleChange(selectedOption){
+    this.selectedOption = selectedOption;
+    console.log(`Option selected:`, selectedOption);
+  }
 
-  handleChange(event){
-    //this.setState({groupName: event.target.value}); 
+  
+  handleGroupChange(event){
+    this.groupName = event.target.value; 
   }
   
   createGroup(){
@@ -40,6 +55,11 @@ class NewGroup extends Component {
           <Container>
             <h1 className="jumbotron-heading">Danky Rank Create Group</h1>
             <input onChange={this.handleChange} placeholder="Enter Group Name"></input>
+            <Select
+                value={this.selectedOption.name}
+                onChange={this.handleChange}
+                options={options}
+            />
             <button onClick={this.createGroup}>Create Group</button>
           </Container>
         </Jumbotron>
