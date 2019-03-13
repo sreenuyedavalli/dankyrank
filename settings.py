@@ -1,6 +1,7 @@
 import os
 
 import dj_database_url
+from django.urls import reverse_lazy
 
 APP_NAME = 'dankyrank'
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -26,6 +27,17 @@ WSGI_APPLICATION = 'wsgi.application'
 
 # APP AND MIDDLEWARE SETTINGS
 
+AUTHENTICATION_BACKENDS = [
+    'social_core.backends.spotify.SpotifyOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+]
+SOCIAL_AUTH_SPOTIFY_SCOPE = ['playlist-modify-public']
+
+SOCIAL_AUTH_POSTGRES_JSONFIELD = True
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
+LOGIN_URL = reverse_lazy('login')
+LOGIN_REDIRECT_URL = reverse_lazy('home')
+
 DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,6 +50,7 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     'django_extensions',
     'webpack_loader',
+    'social_django',
 ]
 LOCAL_APPS = [
     'taskapp',
@@ -105,6 +118,8 @@ TEMPLATES = [
                 'django.template.context_processors.static',
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -146,3 +161,7 @@ CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = TIME_ZONE
+
+# SPOTIFY SETTINGS
+SOCIAL_AUTH_SPOTIFY_KEY = os.getenv('SOCIAL_AUTH_SPOTIFY_KEY', '')
+SOCIAL_AUTH_SPOTIFY_SECRET = os.getenv('SOCIAL_AUTH_SPOTIFY_SECRET', '')

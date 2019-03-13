@@ -14,6 +14,7 @@ const paths = require('./paths');
 const getClientEnvironment = require('./env');
 const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const BundleTracker = require('webpack-bundle-tracker');
+const components = require('./components');
 
 const publicPath = '/static/bundles/';
 const shouldUseRelativeAssetPaths = publicPath === './';
@@ -76,9 +77,7 @@ module.exports = {
     mode: 'production',
     bail: true,
     devtool: shouldUseSourceMap ? 'source-map' : false,
-    entry: {
-        Home: './app/home/react/Home',
-    },
+    entry: components.components,
     output: {
         path: paths.appBuild,
         filename: 'js/[name].[chunkhash:8].js',
