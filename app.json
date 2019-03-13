@@ -11,7 +11,7 @@
     }
   ],
   "env": {
-    "DJANGO_DEBUG": "True",
+    "DJANGO_DEBUG": "False",
     "DJANGO_SECRET_KEY": {
       "generator": "secret"
     }
