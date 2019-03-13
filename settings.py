@@ -26,6 +26,10 @@ WSGI_APPLICATION = 'wsgi.application'
 
 # APP AND MIDDLEWARE SETTINGS
 
+SOCIAL_AUTH_AUTHENTICATION_BACKENDS = (
+    'social_core.backends.spotify.SpotifyOAuth2',
+)
+
 SOCIAL_AUTH_POSTGRES_JSONFIELD = True
 
 DJANGO_APPS = [
