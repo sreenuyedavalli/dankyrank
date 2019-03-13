@@ -1,0 +1,25 @@
+{
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "env": {
+    "DJANGO_DEBUG": "True",
+    "DJANGO_SECRET_KEY": {
+      "generator": "secret"
+    }
+  },
+  "formation": {
+  },
+  "name": "dankyrank",
+  "scripts": {
+  },
+  "stack": "heroku-18"
+}
