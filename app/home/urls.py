@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from app.home.views import LoginView, HomeView, IndexView, NewGroupView
+from app.home.views import LoginView, HomeView, NewGroupView
 
 urlpatterns = [
     url(r'^$', HomeView.as_view(template_name='react.html'), name="home"),
