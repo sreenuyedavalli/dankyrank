@@ -37,7 +37,7 @@ class Home extends Component {
               </li>
             </ul>
             <ButtonGroup className="w-100 d-flex">
-              <a href="#" className="btn btn-primary my-2 w-100">create group</a>
+              <a href="/newgroup" className="btn btn-primary my-2 w-100">create group</a>
               <a href="#" className="btn btn-secondary my-2 w-100">join group</a>
               <a href="#" className="btn btn-primary my-2 w-100">my groups</a>
             </ButtonGroup>

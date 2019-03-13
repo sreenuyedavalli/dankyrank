@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import '../bootstrap.css';
-import './Login.css'
+import './Login.css';
+import Logo from '../logo.jpg';
 
 class Login extends Component {
 
@@ -16,7 +17,7 @@ class Login extends Component {
         <div className="login-page">
           <div className="form">
             <form className="login-form">
-              <img src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo3.png"
+              <img src={Logo}
                    alt="dankyrank"/>
               <a className="btn btn-primary" href={this.state.login_link}>login with spotify</a>
             </form>
