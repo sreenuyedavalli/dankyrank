@@ -35,7 +35,7 @@ AUTHENTICATION_BACKENDS = [
 SOCIAL_AUTH_POSTGRES_JSONFIELD = True
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 LOGIN_URL = reverse_lazy('login')
-LOGIN_REDIRECT_URL = reverse_lazy('index')
+LOGIN_REDIRECT_URL = reverse_lazy('home')
 
 DJANGO_APPS = [
     'django.contrib.admin',

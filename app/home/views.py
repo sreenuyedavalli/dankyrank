@@ -13,11 +13,11 @@ class LoginView(TemplateView):
         return ctx
 
 
-class IndexView(LoginRequiredMixin, TemplateView):
+class HomeView(LoginRequiredMixin, TemplateView):
 
     def get_context_data(self, **kwargs):
-        ctx = super(IndexView, self).get_context_data(**kwargs)
-        ctx['title'] = "Django React Multi-page App"
+        ctx = super(HomeView, self).get_context_data(**kwargs)
+        ctx['title'] = "dankyrank"
         ctx['component'] = 'Home'
         ctx['initialState'] = {}
         return ctx
