@@ -26,6 +26,8 @@ WSGI_APPLICATION = 'wsgi.application'
 
 # APP AND MIDDLEWARE SETTINGS
 
+SOCIAL_AUTH_POSTGRES_JSONFIELD = True
+
 DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
