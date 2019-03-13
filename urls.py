@@ -5,7 +5,7 @@ from django.urls import include
 import app.home.urls
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
     url(r'', include(app.home.urls)),
-    url('', include('social_django.urls', namespace='social')),
+    url(r'^admin/', admin.site.urls),
+    url(r'^social/', include('social_django.urls', namespace='social')),
 ]

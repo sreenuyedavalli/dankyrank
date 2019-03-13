@@ -1,6 +1,7 @@
 import os
 
 import dj_database_url
+from django.urls import reverse_lazy
 
 APP_NAME = 'dankyrank'
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -26,12 +27,15 @@ WSGI_APPLICATION = 'wsgi.application'
 
 # APP AND MIDDLEWARE SETTINGS
 
-SOCIAL_AUTH_AUTHENTICATION_BACKENDS = (
+AUTHENTICATION_BACKENDS = [
     'social_core.backends.spotify.SpotifyOAuth2',
     'django.contrib.auth.backends.ModelBackend',
-)
+]
 
 SOCIAL_AUTH_POSTGRES_JSONFIELD = True
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
+LOGIN_URL = reverse_lazy('login')
+LOGIN_REDIRECT_URL = reverse_lazy('index')
 
 DJANGO_APPS = [
     'django.contrib.admin',
@@ -113,6 +117,8 @@ TEMPLATES = [
                 'django.template.context_processors.static',
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
