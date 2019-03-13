@@ -15,12 +15,12 @@ class Footer extends Component {
 
     render() {
         return (
-            <DFooter className="text-muted">
+            <DFooter className="bg-dark">
                 <Container>
                     <PFooter className="float-right">
                         <a href="#">Back to top</a>
                     </PFooter>
-                    <PFooter>&copy; 2019 Colossus Innovation LLC</PFooter>
+                    <PFooter className="text-primary">&copy; 2019 dankyrank</PFooter>
                 </Container>
             </DFooter>
         );

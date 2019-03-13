@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import '../bootstrap.css';
+import './Login.css'
 
 class Login extends Component {
 
@@ -11,8 +12,17 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="App">
-        <a href={this.state.login_link}>Login with Spotify</a>
+      <div className="container">
+        <div className="login-page">
+          <div className="form">
+            <form className="login-form">
+              <img src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo3.png"
+                   alt="dankyrank"/>
+              <a className="btn btn-primary" href={this.state.login_link}>login with spotify</a>
+            </form>
+          </div>
+        </div>
+
       </div>
     );
   }
