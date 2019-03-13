@@ -28,6 +28,7 @@ WSGI_APPLICATION = 'wsgi.application'
 
 SOCIAL_AUTH_AUTHENTICATION_BACKENDS = (
     'social_core.backends.spotify.SpotifyOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
 )
 
 SOCIAL_AUTH_POSTGRES_JSONFIELD = True
