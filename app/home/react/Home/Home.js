@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import './bootstrap.css';
-import TopNav from "./TopNav";
+import '../bootstrap.css';
+import TopNav from "./../TopNav";
 import {Container, Jumbotron} from "reactstrap";
-import Footer from "./Footer";
+import Footer from "./../Footer";
 
 class Home extends Component {
 

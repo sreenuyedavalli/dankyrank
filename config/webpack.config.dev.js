@@ -12,7 +12,7 @@ const paths = require('./paths');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const BundleTracker = require('webpack-bundle-tracker');
-
+const components = require('./components');
 
 const publicPath = 'http://localhost:3000/';
 const publicUrl = 'http://localhost:3000/';
@@ -62,9 +62,7 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
 module.exports = {
     mode: 'development',
     devtool: 'cheap-module-source-map',
-    entry: {
-        Home: './app/home/react/Home',
-    },
+    entry: components.components,
     output: {
         pathinfo: true,
         filename: 'static/js/[name].js',
