@@ -38,6 +38,7 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     'django_extensions',
     'webpack_loader',
+    'social_django',
 ]
 LOCAL_APPS = [
     'taskapp',
