@@ -2,7 +2,7 @@ import os
 
 import dj_database_url
 
-APP_NAME = 'app'
+APP_NAME = 'dankyrank'
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # BASIC DJANGO SETTINGS
