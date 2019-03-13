@@ -21,3 +21,12 @@ class IndexView(LoginRequiredMixin, TemplateView):
         ctx['component'] = 'Home'
         ctx['initialState'] = {}
         return ctx
+
+class NewGroupView(LoginRequiredMixin, TemplateView):
+
+    def get_context_data(self, **kwargs):
+        ctx = super(NewGroupView, self).get_context_data(**kwargs)
+        ctx['title'] = "Django React Multi-page App"
+        ctx['component'] = 'NewGroup'
+        ctx['initialState'] = {}
+        return ctx

@@ -12,20 +12,18 @@ class Home extends Component {
     this.state = window.initialState;
   }
 
+
+
   render() {
     return (
       <div className="App">
         <TopNav/>
         <Jumbotron>
           <Container>
-            <h1 className="jumbotron-heading">Example Django + React Multi-page Application</h1>
-            <p className="lead text-muted">Each Django-rendered page is a totally separate React component,
-              using <em>window.initialState</em> to load the initial state of the page.
-            </p>
-            <p>
-              <a href="#" className="btn btn-primary my-2">Wow</a>
-              <a href="#" className="btn btn-secondary my-2">So cool!</a>
-            </p>
+            <h1 className="jumbotron-heading">Danky Rank</h1>
+            <button>Create New Group</button>
+            <button>Join Existing Group</button>
+            <button>View My Groups</button>
           </Container>
         </Jumbotron>
         <Footer/>
