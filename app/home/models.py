@@ -1,25 +1,21 @@
 from django.db import models
 
 class Playlist(models.Model):
-    user_id = models.CharField(max_length=50)
-    playlist_id = models.CharField(max_length=50)
+    owner = models.ForeignKey(User)
     name = models.CharField(max_length=100)
-    is_master = models.CharField(max_length=50)
+    spotify_playlist_id = models.CharField(max_length=255)
 
 class Group(models.Model):
-    group_id = models.CharField(max_length=50)
+    owner = models.ForeignKey(User)
     name = models.CharField(max_length=100)
+    master_playlist = models.ForeignKey(Playlist)
 
-class Members(models.Model):
-    group_id = models.CharField(max_length=50)
-    user_id = models.CharField(max_length=50)
-    playlist_id = models.CharField(max_length=50)
+class Membership(models.Model):
+    group = models.ForeignKey(Group)
+    user = models.ForeignKey(User)
+    playlist = models.ForeignKey(Playlist)
 
 class Songs(models.Model):
     artist = models.CharField(max_length=100)
     spotify_id = models.CharField(max_length=100)
     name = models.CharField(max_length=100)
-
-class Songlist(models.Model):
-    song_id = models.CharField(max_length=50)
-    playlist_id = models.CharField(max_length=50)
